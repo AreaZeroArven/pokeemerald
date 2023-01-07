@@ -305,9 +305,7 @@ static void BuildColorMaps(void)
             }
 
             baseBrightness = curBrightness;
-            remainingBrightness = 0x1f00 - curBrightness;
-            if ((0x1f00 - curBrightness) < 0)
-                remainingBrightness += 0xf;
+            remainingBrightness = (0x1f00 - curBrightness) / 16;
 
             brightnessDelta = remainingBrightness / (NUM_WEATHER_COLOR_MAPS - 3);
             if (colorVal < 12)
